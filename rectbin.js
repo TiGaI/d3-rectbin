@@ -1,6 +1,10 @@
-(function() {
+(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+	typeof define === 'function' && define.amd ? define(['exports'], factory) :
+	(factory((global.d3 = global.d3 || {})));
+}(this, (function (exports) { 'use strict';
 
-  d3.rectbin = function() {
+  rectbin = function() {
     var dx = 0.1,
         dy = 0.1, 
         x = rectbinX,
@@ -69,8 +73,13 @@
   var rectbinX = function(d) { return d[0]; },
       rectbinY = function(d) { return d[1]; };
 
-})();
+  function trunc(x) {
+    return x < 0 ? Math.ceil(x) : Math.floor(x);
+  }
 
-function trunc(x) {
-  return x < 0 ? Math.ceil(x) : Math.floor(x);
-}
+exports.rectbin = rectbin;
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})));
+
