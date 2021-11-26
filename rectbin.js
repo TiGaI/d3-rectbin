@@ -4,7 +4,7 @@
 	(factory((global.d3 = global.d3 || {})));
 }(this, (function (exports) { 'use strict';
 
-  rectbin = function() {
+  var rectbin = function() {
     var dx = 0.1,
         dy = 0.1, 
         x = rectbinX,
